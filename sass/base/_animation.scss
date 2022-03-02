@@ -1,0 +1,38 @@
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes shine {
+    from {
+        mask-position: 150deg;
+        -webkit-mask-position: 150deg;
+    }
+    to {
+        mask-position: -50deg;
+        -webkit-mask-position: -50deg;
+    }
+}

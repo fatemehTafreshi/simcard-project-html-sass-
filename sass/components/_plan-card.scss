@@ -1,0 +1,127 @@
+.plan-card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    -webkit-perspective: 150rem;
+    height: 50rem;
+    position: relative;
+    &__view {
+        transition: all .8s ease-in-out;
+        height: 50rem;
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: .7rem;
+        box-shadow: 0 1.5px 3px 2px rgba($black-color, 0.35);
+        &--front {
+            background-color: $white-color;
+        }
+        &--back {
+            transform: rotateY(180deg);
+            overflow: hidden;
+            position: relative;
+            &-1 {
+                background-image: linear-gradient(to top left, $color-purple-dark, $color-purple-light);
+            }
+            &-2 {
+                background-image: linear-gradient(to top left, $color-green-dark, $color-green-light);
+            }
+            &-3 {
+                background-image: linear-gradient(to top left, $color-orange-dark, $color-orange-light);
+            }
+        }
+    }
+    &:hover &__view--front {
+        transform: rotateY(180deg);
+    }
+    &:hover &__view--back {
+        transform: rotateY(0);
+    }
+    // front styles
+    &__pic {
+        height: 23rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        clip-path: polygon(0 0, 100% 0, 100% 89%, 66% 89%, 38% 100%, 0 100%);
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($black-color, .2), rgba($primary-color, .2)), url('../img/Purple_SIM.png');
+        }
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($black-color, .2), rgba($primary-color, .2)), url('../img/blue_sim.png');
+        }
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($black-color, .2), rgba($primary-color, .2)), url('../img/pink_sim.png');
+        }
+    }
+    &__title {
+        background-color: rgba($color-purple-dark, .7);
+        position: absolute;
+        top: 12rem;
+        right: 4rem;
+        padding: 0.6rem;
+        font-size: 1.7rem;
+        color: $white-color;
+        font-weight: 300;
+        text-transform: uppercase;
+        transform: rotate3d(1, 0, 6, -54deg);
+    }
+    &__details {
+        list-style: none;
+        line-height: 3.3rem;
+        padding-top: 1.5rem;
+        font-weight: 600;
+    }
+    // back style
+    &--deals {
+        font-size: 1.8rem;
+        color: $white-color;
+        padding: 2rem;
+        line-height: 3.3rem;
+        font-weight: 500;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @include respond-to(laptop-l) {
+        // back style
+        &--deals {
+            font-size: 1.2rem;
+            padding: 6rem 2rem;
+        }
+    }
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover:none) {
+        height: auto;
+        &__view {
+            height: auto;
+            position: relative;
+            &--back {
+                transform: rotateY(0);
+                margin-top: -4rem;
+                clip-path: polygon(29% 11%, 60% 0, 100% 0, 100% 100%, 0 100%, 0 11%);
+                border-radius: 0 0 .7rem .7rem;
+            }
+        }
+        &:hover &__view--front {
+            transform: rotateY(0);
+        }
+        //front style
+        &__details {
+            padding-bottom: 5rem;
+        }
+        // back style
+        &--deals {
+            font-size: 1.2rem;
+            padding: 6rem 2rem 0rem 2rem;
+            text-align: justify;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+        }
+    }
+}

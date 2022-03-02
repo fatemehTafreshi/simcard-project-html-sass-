@@ -1,0 +1,89 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #777;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include respond-to(tablet) {
+        display: block;
+    }
+}
+
+.section-specifications-cards {
+    background-image: linear-gradient(to bottom, rgba($primary-color, .7), rgba($primary-color, .5)), url("../img/simcard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 25%, 20% 0);
+    width: 100%;
+    @include respond-to(tablet) {
+        height: 70rem;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 20% 0);
+        padding: 5rem 0 19rem 0;
+    }
+    @include respond-to(phone) {
+        height: 62rem;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 4%, 20% 0);
+        padding: 4rem 0 18rem 0;
+    }
+}
+
+.section-feedback {
+    @include respond-to(tablet) {
+        padding-bottom: 75rem;
+    }
+    .heading__primary {
+        padding-top: 10rem;
+        @include respond-to(tablet) {
+            padding-top: 7rem;
+        }
+        @include respond-to(phone) {
+            padding-top: 5rem;
+        }
+    }
+}
+
+.section-form {
+    position: relative;
+    &__bg--video {
+        height: 100%;
+        width: 100%;
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+}
+
+.form {
+    background-image: linear-gradient(105deg, rgba($white-color, .9) 0%, rgba($white-color, .9) 50%, transparent 50%), url('../img/network-connection.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 65rem;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include respond-to(laptop-l) {
+        height: 50rem;
+    }
+    @include respond-to(tablet) {
+        height: auto;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        overflow: hidden;
+    }
+}
+
+.footer {
+    background-color: $gray-color-dark;
+    color: $white-color;
+    // height: 30rem;
+}

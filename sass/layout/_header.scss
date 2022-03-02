@@ -1,0 +1,59 @@
+.header {
+    &__logo {
+        position: absolute;
+        top: -0.2rem;
+        left: 1rem;
+    }
+    &__title {
+        margin-right: 3rem;
+        text-transform: uppercase;
+        &--main,
+        &--sub {
+            display: block;
+            text-align: center;
+        }
+        &--main {
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            animation: fadeInLeft 1s ease-in-out;
+        }
+        &--sub {
+            font-size: 2rem;
+            font-weight: 400;
+            animation: fadeInRight 1s ease-in-out;
+        }
+    }
+    &__images {
+        position: relative;
+        &--blackblob {
+            height: 400px;
+            opacity: 0.7;
+        }
+        &--blueblob,
+        &--simcard {
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        @include respond-to(tablet) {
+            &--blueblob,
+            &--simcard,
+            &--blackblob {
+                height: 220px;
+                top: 0;
+            }
+        }
+        @include respond-to(phone) {
+            &--blueblob,
+            &--simcard,
+            &--blackblob {
+                height: 180px;
+                top: 0;
+            }
+        }
+    }
+}

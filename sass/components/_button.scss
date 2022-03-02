@@ -1,0 +1,75 @@
+.btn-flip {
+    width: 160px;
+    height: 48px;
+    margin: 4rem 0;
+    perspective: 150rem;
+    position: relative;
+    &__link {
+        font-weight: 400;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform .3s ease;
+        cursor: pointer;
+    }
+    &__front,
+    &__back {
+        width: 160px;
+        height: 48px;
+        line-height: 4.8rem;
+        text-align: center;
+        letter-spacing: 0.4rem;
+    }
+    &__front {
+        background-color: $color-orange-dark;
+        color: $white-color;
+        transform: rotateY(0) translateZ(24px);
+    }
+    &__back {
+        background-color: rgba($color-orange-dark, 0);
+        color: rgba($gray-color-dark, 0);
+        transform: rotateX(90deg) translateZ(24px);
+        overflow: hidden;
+    }
+    &__back::after {
+        content: '';
+        position: absolute;
+        top: -32%;
+        left: -10%;
+        width: 120%;
+        height: 50%;
+        background-color: $color-orange-dark;
+        transform: rotate(8deg);
+        transition: all 0.5s ease;
+        transition-delay: .15s;
+    }
+    &__link:hover {
+        transform: translateZ(-24px) rotateX(-90deg);
+    }
+    &__link:hover &__front {
+        background-color: $black-color;
+        transition: all .8s ease;
+    }
+    &__link:hover &__back {
+        color: $white-color;
+        transition: all .4s linear;
+        background-color: $primary-color;
+    }
+    &__link:hover &__back::after {
+        transform: rotate(6deg) translate(100px, -18px);
+    }
+    @include respond-to(bigger-screen) {
+        margin: 6rem auto;
+    }
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover:none) {
+        margin: 2rem auto;
+    }
+}

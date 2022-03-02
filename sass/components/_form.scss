@@ -1,0 +1,63 @@
+.form-container {
+    width: 50%;
+    padding: 5rem;
+    %label-up {
+        color: $color-purple-dark;
+        top: -2.5rem;
+        transform: scale(0.9);
+        transition: all 200ms ease-in-out;
+    }
+    &__input {
+        &:first-child {
+            margin-top: 10rem;
+        }
+        position: relative;
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        &--text {
+            padding: 1rem 1rem 3rem 1rem;
+            border: none;
+            background-color: transparent;
+            ~span {
+                display: block;
+                width: 0;
+                height: 3px;
+                background-color: $color-purple-dark;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all 200ms ease-in-out;
+            }
+            &:focus {
+                outline: 0;
+                ~label {
+                    @extend %label-up;
+                }
+                ~span {
+                    width: 40%;
+                }
+            }
+            &:valid~label {
+                @extend %label-up;
+            }
+        }
+        &--label {
+            color: $gray-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1rem;
+            transition: all 200ms ease-in-out;
+        }
+    }
+    @include respond-to(tablet) {
+        width: 80%;
+        padding: 2rem;
+        h3 {
+            font-size: 2.9rem;
+        }
+        &__input {
+            font-size: 1.5rem;
+        }
+    }
+}

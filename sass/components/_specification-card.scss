@@ -1,0 +1,47 @@
+.specification-card {
+    background-color: $white-color;
+    font-size: 1.7rem;
+    padding: 2.5rem;
+    border-radius: 3px;
+    box-shadow: 0 4.5px 2px 2px rgba($black-color, .15);
+    clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+    transition: transform 200ms ease-in;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &__icon {
+        i {
+            font-size: 3rem;
+            background-image: linear-gradient(to right, $primary-color, $primary-color-light);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent;
+        }
+    }
+    &__title {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__list {
+        list-style: none;
+        font-weight: 600;
+        line-height: 2;
+    }
+    @include respond-to(tablet) {
+        padding: 1rem 0;
+        font-size: 1.5rem;
+        clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+        &__title {
+            padding: .9rem 0;
+        }
+    }
+    @include respond-to(phone) {
+        clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%, 0 22%);
+        &__title {
+            font-size: 1.8rem;
+            padding: .8rem 0;
+        }
+    }
+}

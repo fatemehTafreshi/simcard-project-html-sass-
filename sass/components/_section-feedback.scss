@@ -1,0 +1,29 @@
+.feedback-card {
+    text-align: left;
+    border-radius: .7rem;
+    box-shadow: .1rem .4rem 1.2rem rgba($black-color, .6);
+    padding: 2rem;
+    &__header {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        &--img {
+            height: 90px;
+            width: 90px;
+            border-radius: 100px;
+            margin-right: 2rem;
+        }
+        &--title {
+            font-size: 1.8rem;
+        }
+    }
+    &__p {
+        font-size: 1.5rem;
+        padding-top: 2rem;
+        line-height: 2.2rem;
+    }
+    @include respond-to(phone) {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}
